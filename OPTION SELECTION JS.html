@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Show Hide Using Select Box</title>
+<style type="text/css">
+    .box{
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #000;
+    }
+    .project-1{ background: #ff0000; }
+    .project-2{ background: #00ff00; }
+    .project-3{ background: #0000ff; }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="project-1"){
+                $(".box").not(".project-1").hide();
+                $(".project-1").show();
+            }
+            else if($(this).attr("value")=="project-2"){
+                $(".box").not(".project-2").hide();
+                $(".project-2").show();
+            }
+            else if($(this).attr("value")=="project-3"){
+                $(".box").not(".project-3").hide();
+                $(".project-3").show();
+            }
+			else if($(this).attr("value")=="project-4"){
+                $(".box").not(".project-4").hide();
+                $(".project-4").show();
+            }
+            else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+</head>
+<body>
+    <div>
+        <select>
+            <option>Choose Color</option>
+            <option value="project-1">project-1</option>
+            <option value="project-2">project-2</option>
+            <option value="project-3">project-3</option>
+			<option value="project-4">project-4</option>
+        </select>
+    </div>
+    <div class="project-1 box">You have selected <strong>project-1 option</strong> so i am here</div>
+    <div class="project-2 box">You have selected <strong>project-2 option</strong> so i am here</div>
+    <div class="project-3 box">You have selected <strong>project-3 option</strong> so i am here</div>
+	<div class="project-4 box">You have selected <strong>project-4 option</strong> so i am here el 4</div>
+</body>
+</html>                                		

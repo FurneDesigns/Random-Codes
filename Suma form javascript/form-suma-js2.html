@@ -1,0 +1,53 @@
+<html>
+ <head>
+<script language="JavaScript">
+	function changeRadio(){
+
+	var nr1 = document.getElementsByName('nombreRadio1'), nr1_checked = false;
+		for ( var i = 0; i < nr1.length; i++) {
+		if(nr1[i].checked) {
+			nr1_checked = true;
+			break;
+		}
+	}
+	var nr2 = document.getElementsByName('nombreRadio2'), nr2_checked = false;
+		for ( var i = 0; i < nr2.length; i++) {
+		if(nr2[i].checked) {
+			nr2_checked = true;
+			break;
+		}
+	}
+	var nr3 = document.getElementsByName('nombreRadio3'), nr3_checked = false;
+		for ( var i = 0; i < nr3.length; i++) {
+		if(nr3[i].checked) {
+			nr3_checked = true;
+			break;
+		}
+	}
+	document.getElementById("planformsume").value= 
+	((nr1_checked)?parseInt(document.planform.nombreRadio1.value,10):0)+((nr2_checked)? parseInt(document.planform.nombreRadio2.value,10):0)+ ((nr3_checked)?parseInt(document.planform.nombreRadio3.value,10):0);
+	
+	document.getElementById("planformsume2").value= 
+	((nr1_checked)?parseInt(document.planform.nombreRadio1.value,10):0)
+	}
+
+</script>
+ </head>
+ <body>
+<form name="planform">
+<input type="radio" name="nombreRadio1" value="1" onchange="javascript:changeRadio()"/>
+<input type="radio" name="nombreRadio1" value="2" onchange="javascript:changeRadio()"/>
+<input type="radio" name="nombreRadio1" value="3" onchange="javascript:changeRadio()"/><br/>
+<input type="radio" name="nombreRadio2" value="4" onchange="javascript:changeRadio()"/>
+<input type="radio" name="nombreRadio2" value="5" onchange="javascript:changeRadio()"/>
+<input type="radio" name="nombreRadio2" value="6" onchange="javascript:changeRadio()"/><br/>
+<input type="radio" name="nombreRadio3" value="7" onchange="javascript:changeRadio()"/>
+<input type="radio" name="nombreRadio3" value="8" onchange="javascript:changeRadio()"/>
+<input type="radio" name="nombreRadio3" value="9" onchange="javascript:changeRadio()"/><br/>
+
+<input type="text" name="planformsume" id="planformsume" value="0">$
+<input type="text" name="planformsume" id="planformsume2" value="0">
+</form>
+
+ </body>
+</html>
